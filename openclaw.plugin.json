@@ -1,0 +1,63 @@
+{
+  "id": "serper",
+  "name": "Serper",
+  "description": "OpenClaw Serper.dev Google SERP provider with native mini-batches of up to 100 queries.",
+  "icon": "https://cdn.simpleicons.org/google",
+  "activation": {
+    "onStartup": false
+  },
+  "setup": {
+    "providers": [
+      {
+        "id": "serper",
+        "authMethods": ["api-key"],
+        "envVars": ["SERPER_API_KEY"]
+      }
+    ]
+  },
+  "uiHints": {
+    "webSearch.apiKey": {
+      "label": "Serper API Key",
+      "help": "Serper.dev API key (fallback: SERPER_API_KEY env var).",
+      "sensitive": true,
+      "placeholder": "serper-..."
+    },
+    "webSearch.baseUrl": {
+      "label": "Serper Base URL",
+      "help": "Optional Serper-compatible API base URL. Defaults to https://google.serper.dev."
+    },
+    "webSearch.fallbacks": {
+      "label": "Fallback providers",
+      "help": "Optional ordered fallback list. Use an empty list to run Serper only."
+    }
+  },
+  "contracts": {
+    "webSearchProviders": ["serper"]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "webSearch": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "apiKey": {
+            "type": ["string", "object"]
+          },
+          "baseUrl": {
+            "type": ["string", "object"]
+          },
+          "fallbacks": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["brave", "firecrawl"]
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
+}

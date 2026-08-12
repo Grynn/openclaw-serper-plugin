@@ -1,0 +1,18 @@
+node_modules/
+dist/
+coverage/
+*.log
+
+# Credentials and local OpenClaw state
+.env
+.env.*
+!.env.example
+.openclaw/
+*.key
+*.pem
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,43 @@
+{
+  "name": "@grynn/openclaw-serper-plugin",
+  "version": "1.1.0",
+  "private": true,
+  "description": "OpenClaw Serper.dev web-search provider with native 100-query mini-batches.",
+  "homepage": "https://github.com/Grynn/openclaw-serper-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/Grynn/openclaw-serper-plugin/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grynn/openclaw-serper-plugin.git"
+  },
+  "type": "module",
+  "scripts": {
+    "check": "pnpm typecheck && pnpm test",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "openclaw": "2026.7.1-2",
+    "typescript": "^6.0.0",
+    "vitest": "^4.1.10"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.6.11"
+  },
+  "packageManager": "pnpm@11.15.1",
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.6.11",
+      "minGatewayVersion": "2026.6.11"
+    },
+    "build": {
+      "openclawVersion": "2026.6.11"
+    }
+  }
+}
