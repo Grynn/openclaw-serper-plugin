@@ -2,7 +2,7 @@
   "id": "serper",
   "name": "Serper",
   "description": "OpenClaw Serper.dev Google SERP provider with native mini-batches of up to 100 queries.",
-  "icon": "https://cdn.simpleicons.org/google",
+  "icon": "https://serper.dev/favicon-32x32.png",
   "activation": {
     "onStartup": false
   },
